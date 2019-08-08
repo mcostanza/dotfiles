@@ -1,0 +1,8 @@
+vim/backups/*
+vim/undodir/*
+vim/local.vim
+vim/plugged
+vim/local-plug.vim
+vim/autoload/plug.vim
+vim-config/undodir
+vim-config/backups
