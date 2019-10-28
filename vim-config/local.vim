@@ -1,6 +1,8 @@
 " Appearance
 set guifont=Inconsolata\ XL:h20
-colorscheme base16-twilight
+if has("gui_running")
+  colorscheme base16-twilight
+end
 highlight Normal ctermfg=grey ctermbg=black
 
 " Disable cursor blink
