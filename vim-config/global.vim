@@ -10,6 +10,7 @@ set autoindent                             " Keep the indent when creating a new
 set smarttab                               " Use shiftwidth and softtabstop to insert or delete (on <BS>) blanks
 set cindent                                " Recommended seting for automatic C-style indentation
 set autoindent                             " Automatic indentation in non-C files
+set smartindent
 set nowrap                                 " Dont wrap lines
 set wildmenu                               " Make tab completion act more like bash
 set wildmode=longest,list,full             " Tab complete to longest common string, like bash
@@ -28,3 +29,8 @@ set undoreload=10000
 " Use system clipboard
 set clipboard+=unnamed                     " Set system clipboard
 set mouse=a
+
+" Folding based on indent, 5 levels max
+set foldmethod=indent
+set foldnestmax=5
+set nofoldenable
