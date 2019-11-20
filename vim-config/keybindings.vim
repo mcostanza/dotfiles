@@ -13,3 +13,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-x> <C-w>q
+
+" Toggle comment/uncomment with Command-/
+map <D-/> :TComment<CR>
