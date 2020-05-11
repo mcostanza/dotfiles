@@ -3,3 +3,4 @@ eamodio.gitlens
 kaiwood.endwise
 ionceflorin.copy-current-file-path
 vscodevim.vim
+AndrsDC.base16-themes
