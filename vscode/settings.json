@@ -24,13 +24,13 @@
         {
             "before": ["<leader>", "v", "v"],
             "commands": [
-                "workbench.action.splitEditorDown"
+                "workbench.action.splitEditorRight"
             ]
         },
         {
             "before": ["<leader>", "s", "s"],
             "commands": [
-                "workbench.action.splitEditorRight"
+                "workbench.action.splitEditorDown"
             ]
         },
         // ,cf = Copy File path
