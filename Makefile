@@ -5,12 +5,14 @@ DOTFILES := $(patsubst %, ${HOME}/.%, $(SOURCES))
 NVIM_CONFIG := ${HOME}/.config/nvim/init.vim
 NVIM_PLUG := ${HOME}/.local/share/nvim/site/autoload/plug.vim
 VIM_PLUG := ${HOME}/.vim/autoload/plug.vim
+VSCODE_PATH := ${HOME}/Library/Application\ Support/Code/User
+VSCODE_EXTENSIONS_FILE := vscode/extensions.txt
 
 .PHONY: vim-install uninstall dotfiles
 
 dotfiles: $(DOTFILES) ## Links the the dotfiles in this directory to your $HOME, existing files will be ignored
 nvim-config: $(NVIM_CONFIG)
-install: dotfiles nvim-config vim-install
+install: dotfiles nvim-config vim-install vscode-config vscode-extensions
 
 $(NVIM_CONFIG):
 	mkdir -p ${HOME}/.config/nvim
@@ -30,3 +32,15 @@ vim-install: $(NVIM_PLUG) $(VIM_PLUG) ## Install vim/nvim/macvim plugins
 	@nvim +PlugInstall +qa
 	@vim +PlugInstall +qa
 	@/Applications/MacVim.app/Contents/bin/mvim +PlugInstall +qa
+
+vscode-config: ## Install vscode config
+	mkdir -p $(VSCODE_PATH)
+	ln -si ${PWD}/vscode/keybindings.json $(VSCODE_PATH)
+	ln -si ${PWD}/vscode/settings.json $(VSCODE_PATH)
+
+vscode-extensions: ## Install some shared vscode extensions
+	xargs -n1 code --install-extension < $(VSCODE_EXTENSIONS_FILE)
+
+.PHONY: help
+help:
+	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

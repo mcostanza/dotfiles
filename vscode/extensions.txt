@@ -1,0 +1,5 @@
+rebornix.ruby
+eamodio.gitlens
+kaiwood.endwise
+ionceflorin.copy-current-file-path
+vscodevim.vim

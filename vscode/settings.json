@@ -1,0 +1,43 @@
+{
+    "editor.fontSize": 20,
+    "editor.tabSize": 2,
+    "workbench.colorTheme": "Base16 Dark Twilight",
+    "editor.fontFamily": "Inconsolata XL",
+    "editor.fontLigatures": null,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "scope": [
+              "comment", "punctuation.definition.comment"
+            ],
+            "settings": {
+              "fontStyle": ""
+            }
+          }
+        ]
+    },
+    "editor.cursorBlinking": "solid",
+    "vim.enableNeovim": true,
+    "vim.neovimPath": "/opt/boxen/homebrew/bin/nvim",
+    "vim.leader": ",",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "v", "v"],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            "before": ["<leader>", "s", "s"],
+            "commands": [
+                "workbench.action.splitEditorRight"
+            ]
+        },
+        {
+          "before": ["<leader>", "c", "f"],
+          "commands": [
+            "extension.copyCurrentPath"
+          ]
+        }
+    ]
+}
