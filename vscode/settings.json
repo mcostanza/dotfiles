@@ -33,11 +33,36 @@
                 "workbench.action.splitEditorRight"
             ]
         },
+        // ,cf = Copy File path
         {
           "before": ["<leader>", "c", "f"],
           "commands": [
             "extension.copyCurrentPath"
           ]
+        },
+        // ,cf = Copy Remote path (github)
+        {
+          "before": ["<leader>", "c", "r"],
+          "commands": [
+            "gitlens.copyRemoteFileUrlToClipboard"
+          ]
+        },
+        // ,cg = Copy Git commit sha
+        {
+          "before": ["<leader>", "c", "g"],
+          "commands": [
+            "gitlens.copyShaToClipboard"
+          ]
+        },
+        // ,gb = git blame
+        {
+          "before": ["<leader>", "g", "b"],
+          "commands": [
+            "gitlens.toggleFileBlame"
+          ]
         }
-    ]
+    ],
+    "gitlens.blame.compact": false,
+    "gitlens.blame.format": "${id} ${author} ${date}",
+    "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm:ss"
 }
