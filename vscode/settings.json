@@ -21,26 +21,28 @@
     "vim.neovimPath": "/opt/boxen/homebrew/bin/nvim",
     "vim.leader": ",",
     "vim.normalModeKeyBindingsNonRecursive": [
+        // ,vv = split editor vertical
         {
             "before": ["<leader>", "v", "v"],
             "commands": [
                 "workbench.action.splitEditorRight"
             ]
         },
+        // ,ss = split editor horizontal
         {
             "before": ["<leader>", "s", "s"],
             "commands": [
                 "workbench.action.splitEditorDown"
             ]
         },
-        // ,cf = Copy File path
+        // ,cf = Copy File path, relative to project root
         {
           "before": ["<leader>", "c", "f"],
           "commands": [
             "extension.copyCurrentPath"
           ]
         },
-        // ,cf = Copy Remote path (github)
+        // ,cr = Copy Remote path (github file + line number)
         {
           "before": ["<leader>", "c", "r"],
           "commands": [
