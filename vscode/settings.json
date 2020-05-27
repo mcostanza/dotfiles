@@ -66,5 +66,11 @@
     ],
     "gitlens.blame.compact": false,
     "gitlens.blame.format": "${id} ${author} ${date}",
-    "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm:ss"
+    "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm:ss",
+    "workbench.activityBar.visible": true,
+    "files.insertFinalNewline": true,
+    "editor.minimap.enabled": true,
+    "extensions.ignoreRecommendations": false,
+    "editor.codeActionsOnSave": null,
+    "files.trimTrailingWhitespace": true,
 }
