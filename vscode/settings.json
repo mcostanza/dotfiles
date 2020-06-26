@@ -1,6 +1,33 @@
 {
-    "editor.fontSize": 20,
+    // copied
     "editor.tabSize": 2,
+    "window.title": "${rootName}${separator}${activeEditorMedium}",
+    "files.trimTrailingWhitespace": true,
+    "typescript.check.tscVersion": false,
+    "files.insertFinalNewline": true,
+    "eslint.options": {
+        "configFile": ".eslintrc.js",
+    },
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
+    "cSpell.enableFiletypes": [
+        "ruby"
+    ],
+    "ruby.format": "rubocop",
+    "ruby.intellisense": "rubyLocate",
+    "ruby.lint": {
+        "rubocop": {
+            "useBundler": true
+        }
+    },
+    "ruby.useBundler": true,
+    "ruby.useLanguageServer": true,
+    // customized
+    "editor.fontSize": 20,
     "workbench.colorTheme": "Base16 Dark Twilight",
     "editor.fontFamily": "Inconsolata XL",
     "editor.fontLigatures": null,
@@ -17,8 +44,8 @@
         ]
     },
     "editor.cursorBlinking": "solid",
-    "vim.enableNeovim": true,
-    "vim.neovimPath": "/opt/boxen/homebrew/bin/nvim",
+    // "vim.enableNeovim": true,
+    // "vim.neovimPath": "/opt/boxen/homebrew/bin/nvim",
     "vim.leader": ",",
     "vim.normalModeKeyBindingsNonRecursive": [
         // ,vv = split editor vertical
@@ -68,9 +95,7 @@
     "gitlens.blame.format": "${id} ${author} ${date}",
     "gitlens.defaultDateFormat": "YYYY-MM-DD HH:mm:ss",
     "workbench.activityBar.visible": true,
-    "files.insertFinalNewline": true,
     "editor.minimap.enabled": true,
     "extensions.ignoreRecommendations": false,
     "editor.codeActionsOnSave": null,
-    "files.trimTrailingWhitespace": true,
 }
