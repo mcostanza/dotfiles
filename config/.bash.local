@@ -1,8 +1,10 @@
 # Load any custom after code
-echo "HI HI HI"
 if [ -d $HOME/bash ]; then
   if [ "$(ls -A $HOME/bash/)" ]; then
-    echo "DERP $config_file"
-    for config_file ($HOME/bash/*.sh) source $config_file
+    FILES=$HOME/bash/*.sh
+    for config_file in $FILES
+    do
+      source $config_file
+    done
   fi
 fi

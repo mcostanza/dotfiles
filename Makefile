@@ -62,7 +62,7 @@ vim-install: $(NVIM_PLUG) $(VIM_PLUG) ## Install vim/nvim/macvim plugins
 	@echo "Installing vim plugins"
 	@nvim +PlugInstall +qa
 	@vim +PlugInstall +qa
-	@/Applications/MacVim.app/Contents/bin/mvim +PlugInstall +qa
+	@`brew --prefix macvim`/MacVim.app/Contents/bin/mvim +PlugInstall +qa
 
 update: ## Pull down the latest via git, be careful if you have local changes!
 	@git pull
