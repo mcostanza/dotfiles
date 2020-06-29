@@ -1,0 +1,10 @@
+# Load any custom after code
+if [ -d $HOME/bash ]; then
+  if [ "$(ls -A $HOME/bash/)" ]; then
+    FILES=$HOME/bash/*.sh
+    for config_file in $FILES
+    do
+      source $config_file
+    done
+  fi
+fi

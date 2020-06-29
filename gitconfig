@@ -1,0 +1,24 @@
+[alias]
+  co = checkout
+  st = status
+  ci = commit
+  pu = pull --rebase
+  ps = push
+  br = branch
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+[core]
+  editor = vim
+  autocrlf = input
+[apply]
+  whitespace = nowarn
+[web]
+  browser = open
+[include]
+  path = ~/.gituser
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[pager]
+  branch = cat
