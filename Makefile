@@ -8,10 +8,7 @@ VIM_PLUG := ${HOME}/.vim/autoload/plug.vim
 VSCODE_PATH := ${HOME}/Library/Application\ Support/Code/User
 VSCODE_EXTENSIONS_FILE := vscode/extensions.txt
 
-.PHONY: update vim-install brew-install brew-bundle uninstall dotfiles git-user vscode-config vscode-extensions save-vscode-extensions derp
-
-derp:
-	@echo ${SOURCES}
+.PHONY: update vim-install brew-install brew-bundle uninstall dotfiles git-user vscode-config vscode-extensions save-vscode-extensions
 
 dotfiles: $(DOTFILES) ## Links the the dotfiles in this directory to your $HOME, existing files will be ignored
 git-user: ${HOME}/.gituser ## Set up your git user config so your commits have your name and email on them
