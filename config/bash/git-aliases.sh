@@ -47,7 +47,7 @@ alias gpl='git pull'
 alias gplr='git pull --rebase'
 alias gps='git push'
 alias gpsh='git push -u origin `git rev-parse --abbrev-ref HEAD`'
-alias gnb='git nb' # new branch aka checkout -b
+alias gnb='git checkout -b' # new branch aka checkout -b
 alias grs='git reset'
 alias grsh='git reset --hard'
 alias gcln='git clean'
@@ -62,3 +62,4 @@ alias gbb='git bisect bad'
 alias gdmb='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 
 alias gbr="git for-each-ref --sort=committerdate refs/heads/ --format='(%(color:green)%(committerdate:relative)%(color:reset))%09%(color:blue)%(objectname:short)%(color:red)%09%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject)'"
+alias gg="git grep"
