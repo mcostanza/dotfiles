@@ -8,11 +8,11 @@ VIM_PLUG := ${HOME}/.vim/autoload/plug.vim
 VSCODE_PATH := ${HOME}/Library/Application\ Support/Code/User
 VSCODE_EXTENSIONS_FILE := vscode/extensions.txt
 
-.PHONY: vim-install uninstall dotfiles
+.PHONY: vim-install uninstall dotfiles fonts
 
 dotfiles: $(DOTFILES) ## Links the the dotfiles in this directory to your $HOME, existing files will be ignored
 nvim-config: $(NVIM_CONFIG)
-install: dotfiles nvim-config vim-install vscode-config vscode-extensions
+install: dotfiles nvim-config vim-install vscode-config vscode-extensions fonts
 
 $(NVIM_CONFIG):
 	mkdir -p ${HOME}/.config/nvim
@@ -40,6 +40,9 @@ vscode-config: ## Install vscode config
 
 vscode-extensions: ## Install some shared vscode extensions
 	xargs -n1 code --install-extension < $(VSCODE_EXTENSIONS_FILE)
+
+fonts: ## Install fonts
+	cp -f ./fonts/* ${HOME}/Library/Fonts
 
 .PHONY: help
 help:
