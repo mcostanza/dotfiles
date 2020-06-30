@@ -22,3 +22,5 @@
 	insteadOf = https://github.com/
 [pager]
   branch = cat
+[pull]
+	rebase = true
