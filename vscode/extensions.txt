@@ -5,3 +5,4 @@ ionceflorin.copy-current-file-path
 vscodevim.vim
 AndrsDC.base16-themes
 vayan.haml
+zxh404.vscode-proto3
