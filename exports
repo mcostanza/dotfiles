@@ -14,5 +14,7 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # prompt
-export PS1="\$(vcprompt -f '[%b%u%m]')[\w]$ "
+BLUE="\e[34m"
+NORMAL="\e[0m"
+export PS1="$BLUE\$(vcprompt -f '[%b%u%m]')$NORMAL[\w]$ "
 export PATH="/usr/local/opt/awscli@1/bin:$PATH"
