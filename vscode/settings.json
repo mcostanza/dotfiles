@@ -98,4 +98,5 @@
     "editor.minimap.enabled": true,
     "extensions.ignoreRecommendations": false,
     "editor.codeActionsOnSave": null,
+    "gitlens.blame.avatars": false,
 }
