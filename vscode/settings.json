@@ -25,7 +25,6 @@
         }
     },
     "ruby.useBundler": true,
-    "ruby.useLanguageServer": true,
     // customized
     "editor.fontSize": 20,
     "workbench.colorTheme": "Base16 Dark Twilight",
@@ -99,4 +98,7 @@
     "extensions.ignoreRecommendations": false,
     "editor.codeActionsOnSave": null,
     "gitlens.blame.avatars": false,
+    "window.zoomLevel": 0,
+    "ruby.useLanguageServer": true,
+    "go.useLanguageServer": true,
 }
