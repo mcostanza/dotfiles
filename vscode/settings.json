@@ -101,4 +101,7 @@
     "window.zoomLevel": 0,
     "ruby.useLanguageServer": true,
     "go.useLanguageServer": true,
+    "files.associations": {
+      "*.tmpl": "gohtml"
+    },
 }

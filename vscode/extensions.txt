@@ -9,3 +9,4 @@ zxh404.vscode-proto3
 ms-vsliveshare.vsliveshare
 ms-ossdata.vscode-postgresql
 golang.Go
+casualjim.gotemplate
