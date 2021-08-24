@@ -98,10 +98,11 @@
     "extensions.ignoreRecommendations": false,
     "editor.codeActionsOnSave": null,
     "gitlens.blame.avatars": false,
-    "window.zoomLevel": 0,
     "ruby.useLanguageServer": true,
     "go.useLanguageServer": true,
     "files.associations": {
-      "*.tmpl": "gohtml"
+      "*.tmpl": "gohtml",
+      "Tiltfile": "starlark"
     },
+    "window.zoomLevel": 1,
 }
