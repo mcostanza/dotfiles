@@ -6,5 +6,5 @@ vim/local-plug.vim
 vim/autoload/plug.vim
 vim-config/undodir
 vim-config/backups
-config/bash/reverb-exports.sh
+config/bash/reverb*
 vscode/extensions
