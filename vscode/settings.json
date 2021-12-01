@@ -104,5 +104,4 @@
       "*.tmpl": "gohtml",
       "Tiltfile": "starlark"
     },
-    "window.zoomLevel": 1,
 }
