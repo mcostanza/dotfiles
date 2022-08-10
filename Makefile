@@ -1,5 +1,6 @@
 EXCLUDE := README.md Makefile Brewfile vscode-settings.json vscode-keybindings.json config
 FILES := $(shell ls)
+BREW_PREFIX := $(shell brew --prefix)
 SOURCES := $(filter-out $(EXCLUDE),$(FILES))
 DOTFILES := $(patsubst %, ${HOME}/.%, $(SOURCES))
 NVIM_CONFIG := ${HOME}/.config/nvim/init.vim
@@ -7,17 +8,29 @@ NVIM_PLUG := ${HOME}/.local/share/nvim/site/autoload/plug.vim
 VIM_PLUG := ${HOME}/.vim/autoload/plug.vim
 VSCODE_PATH := ${HOME}/Library/Application\ Support/Code/User
 VSCODE_EXTENSIONS_FILE := vscode/extensions.txt
+SSH_CONFIG := ${HOME}/.ssh/config
 
 .PHONY: update vim-install brew-install brew-bundle uninstall dotfiles git-user vscode-config vscode-extensions save-vscode-extensions
 
 dotfiles: $(DOTFILES) ## Links the the dotfiles in this directory to your $HOME, existing files will be ignored
 git-user: ${HOME}/.gituser ## Set up your git user config so your commits have your name and email on them
 nvim-config: $(NVIM_CONFIG)
-install: dotfiles nvim-config vim-install vscode-config vscode-extensions
+install: dotfiles brew-install brew-bundle yarn nvim-config vim-install git-user vscode-config vscode-extensions ssh-config
+ssh-config: ${SSH_CONFIG}
+
+yarn:
+	nodenv install -s
+	nodenv exec npm install yarn --quiet --silent -g
 
 $(NVIM_CONFIG):
 	mkdir -p ${HOME}/.config/nvim
 	ln -s $(PWD)/config/nvim/init.vim $@
+
+$(SSH_CONFIG):
+	mkdir -p ${HOME}/.ssh
+	ln -s $(PWD)/ssh/config $@
+	chmod 644 $@
+
 
 $(DOTFILES): $(addprefix ${HOME}/., %) : ${PWD}/%
 	-ln -s $< $@ || echo "could not link $< -- you may have an existing dotfile"
@@ -33,21 +46,20 @@ ${HOME}/.gituser:
 
 use-modern-bash: dotfiles brew-install ## Install recent version of bash and use instead of macos catalina's zsh
 	@echo "Trusting bash 5 to use as shell, press enter to continue"; read
-	sudo bash -c 'echo "/usr/local/bin/bash" >> /etc/shells'
-	chsh -s /usr/local/bin/bash
+	sudo bash -c 'echo "${BREW_PREFIX}/bin/bash" >> /etc/shells'
+	chsh -s "${BREW_PREFIX}/bin/bash"
 	. ~/.bashrc
 
 brew-install: ## Install brew, you should only need to do this once
-	ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	@if which brew; then brew update; else /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";  fi;
 
 brew-bundle: ## Installs all the applications listed in the Brewfile
-	brew bundle
-	brew link --force awscli@1
+	- brew bundle
 
 vscode-config:
 	mkdir -p $(VSCODE_PATH)
-	ln -si ${PWD}/vscode/keybindings.json $(VSCODE_PATH)
-	ln -si ${PWD}/vscode/settings.json $(VSCODE_PATH)
+	- ln -s ${PWD}/vscode/keybindings.json $(VSCODE_PATH)
+	- ln -s ${PWD}/vscode/settings.json $(VSCODE_PATH)
 
 vscode-extensions: ## Install some shared vscode extensions
 	xargs -n1 code --install-extension < $(VSCODE_EXTENSIONS_FILE)

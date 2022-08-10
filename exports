@@ -4,8 +4,10 @@ export LSCOLORS="Exfxcxdxbxegedabagacad"
 
 # load
 export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:node_modules/.bin:/usr/local/bin:/usr/local/sbin:$PATH"
-export EDITOR="vim"
 export CDPATH=".:$HOME/dev/"
+export VISUAL="vim"
+export GIT_EDITOR="vim"
+export EDITOR="$VISUAL"
 
 # GO
 export PATH="$(go env GOPATH)/bin:$PATH"
@@ -14,7 +16,4 @@ export PATH="$(go env GOPATH)/bin:$PATH"
 PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # prompt
-BLUE="\e[34m"
-NORMAL="\e[0m"
-export PS1="$BLUE\$(vcprompt -f '[%b%u%m]')$NORMAL[\w]$ "
-export PATH="/usr/local/opt/awscli@1/bin:$PATH"
+export PS1="\[$Blue\]\$(vcprompt -f '[%b%u%m]')\[$Color_Off\][\w]$ "
