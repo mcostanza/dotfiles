@@ -102,6 +102,8 @@
     "go.useLanguageServer": true,
     "files.associations": {
       "*.tmpl": "gohtml",
-      "Tiltfile": "starlark"
+      "Tiltfile": "starlark",
+      "*.html": "html"
     },
+    "go.autocompleteUnimportedPackages": true,
 }
