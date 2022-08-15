@@ -17,3 +17,6 @@ PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # prompt
 export PS1="\[$Blue\]\$(vcprompt -f '[%b%u%m]')\[$Color_Off\][\w]$ "
+
+# silence macos zsh warning
+export BASH_SILENCE_DEPRECATION_WARNING=1
