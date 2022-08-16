@@ -1,8 +1,7 @@
 " Appearance
 set guifont=Inconsolata\ XL:h20
-if has("gui_running")
-  colorscheme base16-twilight
-end
+set termguicolors
+colorscheme base16-twilight
 highlight Normal ctermfg=grey ctermbg=black
 
 " Disable cursor blink
