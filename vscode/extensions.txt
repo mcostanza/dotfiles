@@ -13,3 +13,5 @@ ionceflorin.copy-current-file-path
 AndrsDC.base16-themes
 ms-ossdata.vscode-postgresql
 vscodevim.vim
+rubocop.vscode-rubocop
+GraphQL.vscode-graphql-syntax

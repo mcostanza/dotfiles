@@ -3,6 +3,7 @@ tap "versent/homebrew-taps"
 
 cask "visual-studio-code"
 
+brew "asdf"
 brew "awscli"
 brew "bash"
 brew "bash-completion"
@@ -24,7 +25,7 @@ brew "nvim"
 brew "openssl"
 brew "overmind"
 brew "pipenv"
-brew "postgres" # For CLI client tools like psql
+brew "postgresql@14" # For CLI client tools like psql
 brew "protobuf"
 brew "protoc-gen-go"
 brew "protopkg"
@@ -40,3 +41,17 @@ brew "tmate"
 brew "vcprompt"
 brew "vim"
 brew "wget"
+brew "fzf"
+brew "grpcurl"
+
+# infra/platform
+brew "kind"
+brew "terraform"
+brew "flux"
+brew "kustomize"
+brew "helm"
+brew "kubectx"
+brew "kubectl"
+brew "k9s"
+
+
